@@ -1,0 +1,11 @@
+.bg-gray {
+    background-color: rgb(204, 202, 202);
+}
+
+.container-form {
+    width: 450px;
+}
+
+.container-fluid {
+    height: 100vh;
+}

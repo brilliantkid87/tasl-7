@@ -1,0 +1,11 @@
+.container-fluid {
+    height: 100vh;
+}
+
+/* nav .container {
+    width: 550px;
+} */
+
+.bg-gray {
+    background-color: rgb(204, 202, 202);
+}
