@@ -1,29 +1,3 @@
-// package main
-
-// import "fmt"
-
-// func main() {
-
-// 	fmt.Println("Brian")
-
-// 	var name string
-// 	name = "Brian"
-
-// 	var studentName = "Lauren"
-// 	studentName = "Bagus"
-
-// 	batchName := "Batch 40"
-
-// 	var bialngan1 = 20
-// 	var bilangan2 = 50
-
-// 	fmt.Println(bialngan1 + bilangan2)
-
-// 	fmt.Println(studentName)
-// 	fmt.Println(name)
-// 	fmt.Println(batchName)
-
-// }
 package main
 
 import (
@@ -32,6 +6,7 @@ import (
 	"net/http"
 	"strconv"
 	"text/template"
+	"time"
 
 	"github.com/gorilla/mux"
 )
@@ -91,7 +66,25 @@ func project(w http.ResponseWriter, r *http.Request) {
 
 	}
 
-	tmpl.Execute(w, nil)
+	response := map[string]interface{}{
+		"Blogs": dataBlog,
+	}
+
+	tmpl.Execute(w, response)
+}
+
+type Blog struct {
+	Title       string
+	Description string
+	Author      string
+	Post_Date   string
+}
+
+var dataBlog = []Blog{
+	{
+		Title:       "Hallo Title",
+		Description: "Hallo Description",
+	},
 }
 
 func addProject(w http.ResponseWriter, r *http.Request) {
@@ -102,9 +95,23 @@ func addProject(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 
-	fmt.Println("Title : " + r.PostForm.Get("input-project"))
-	fmt.Println("Description : " + r.PostForm.Get("input-description"))
-	fmt.Println("Date : " + r.PostForm.Get("input-date"))
+	// fmt.Println("Title : " + r.PostForm.Get("input-project"))
+	// fmt.Println("Description : " + r.PostForm.Get("input-description"))
+	// fmt.Println("Start Date : " + r.PostForm.Get("input-sDate"))
+	// fmt.Println("End Date : " + r.PostForm.Get("input-eDate"))
+
+	var title = r.PostForm.Get("input-project")
+	var description = r.PostForm.Get("input-description")
+
+	var newBlog = Blog{
+		Title:       title,
+		Description: description,
+		Author:      "Brilliant",
+		Post_Date:   time.Now().String(),
+	}
+
+	dataBlog = append(dataBlog, newBlog)
+	fmt.Println(dataBlog)
 
 	http.Redirect(w, r, "/project", http.StatusMovedPermanently)
 }

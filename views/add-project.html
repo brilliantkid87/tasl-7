@@ -53,19 +53,16 @@
                     <input type="text" name="input-project" class="form-control shadow border-0" id="input-project">
                 </div>
 
-                <div class="form-row">
-                    <div class="col-md-15 mb-3">
-                        <label for="date" class="col-md-15 col-form-label">Start Date</label>
-                        <div class="col-md-15">
-                            <div class="input-group date" id="datepicker">
-                                <input type="text" class="form-control" name="input-date">
-                                <span class="input-group-append">
-                                    <span class="input-group-text bg-white d-block">
-                                        <i class="fa-solid fa-calendar-days"></i>
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
+                <div class="row gx-5 mb-3">
+                    <div class="col">
+                        <label for="input-sDate" class="col-md-15 col-form-label fw-bold">Start Date</label>
+                        <input type="date" name="input-sDate" class="form-control border-0 shadow">
+                    </div>
+
+                    <div class="col">
+                        <label for="input-eDate" class="col-md-15 col-form-label fw-bold">End Date</label>
+                        <input type="date" name="input-eDate" class="form-control border-0 shadow">
+
                     </div>
                 </div>
 
@@ -78,19 +75,16 @@
                     <label for="input-technologies" class="form-label fw-bold">Technologies</label>
                     <div class="mb-3">
                         <div>
-                            <label for="input-description" >Node Js</label>
+                            <label for="input-checkbox" >Node Js</label>
+                            <input class="form-check-input mt-1" type="checkbox" Svalue="" aria-label="Checkbox for following text input">
+                        
+                            <label for="input-checkbox">TypeScript</label>
                             <input class="form-check-input mt-1" type="checkbox" value="" aria-label="Checkbox for following text input">
-                        </div>
-                        <div>
-                            <label for="input-description">TypeScript</label>
+                        
+                            <label for="input-checkbox">React Js</label>
                             <input class="form-check-input mt-1" type="checkbox" value="" aria-label="Checkbox for following text input">
-                        </div>
-                        <div>
-                            <label for="input-description">React Js</label>
-                            <input class="form-check-input mt-1" type="checkbox" value="" aria-label="Checkbox for following text input">
-                        </div>
-                        <div>
-                            <label for="input-description">Next Js</label>
+                        
+                            <label for="input-checkbox">Next Js</label>
                             <input class="form-check-input mt-1" type="checkbox" value="" aria-label="Checkbox for following text input">
                         </div>
                     </div>
